@@ -1853,6 +1853,310 @@
             100% { stroke-dashoffset: -200; }
         }
 
+		/* Volunteering Section */
+.volunteering-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.volunteer-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.volunteer-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.volunteer-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    box-shadow: var(--glow-primary);
+}
+
+.volunteer-header {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.volunteer-icon {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 45, 255, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volunteer-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-primary);
+}
+
+.volunteer-title h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.volunteer-role {
+    font-size: 0.8rem;
+    color: var(--accent-tertiary);
+    display: block;
+    line-height: 1.4;
+}
+
+.volunteer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.volunteer-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.volunteer-responsibilities {
+    list-style: none;
+}
+
+.volunteer-responsibilities li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.volunteer-responsibilities li:last-child {
+    border-bottom: none;
+}
+
+.volunteer-responsibilities li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+}
+
+/* Activity Items */
+.volunteer-activities {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    background: rgba(0, 212, 255, 0.03);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-primary);
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.activity-icon {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: rgba(0, 255, 136, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--accent-tertiary);
+}
+
+.activity-item span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.volunteer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.volunteer-tags span {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--accent-primary);
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Impact Stats */
+.volunteer-impact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.03), rgba(123, 45, 255, 0.03));
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+}
+
+.impact-stat {
+    text-align: center;
+    padding: 1rem;
+}
+
+.impact-stat .impact-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.impact-stat .impact-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--accent-primary);
+}
+
+.impact-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin-bottom: 0.25rem;
+}
+
+.impact-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .volunteering-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .volunteer-impact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .volunteering-grid {
+        gap: 1.5rem;
+    }
+
+    .volunteer-card {
+        padding: 1.5rem;
+    }
+
+    .volunteer-header {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+
+    .volunteer-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .volunteer-title h3 {
+        font-size: 1.1rem;
+    }
+
+    .volunteer-role {
+        font-size: 0.75rem;
+    }
+
+    .volunteer-responsibilities li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+        padding-left: 1.25rem;
+    }
+
+    .activity-item {
+        padding: 0.5rem 0.6rem;
+    }
+
+    .activity-item span {
+        font-size: 0.8rem;
+    }
+
+    .volunteer-impact {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .impact-stat {
+        padding: 0.75rem;
+    }
+
+    .impact-stat .impact-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 0.75rem;
+    }
+
+    .impact-number {
+        font-size: 1.2rem;
+    }
+
+    .impact-label {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .volunteer-impact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+		
         /* Skills Matrix */
         .skills-container {
             margin-top: 3rem;
@@ -3102,6 +3406,7 @@
             <li><a href="#capabilities">Capabilities</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
+			<li><a href="#volunteering">Volunteering</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#connect">Connect</a></li>
         </ul>
@@ -3834,6 +4139,153 @@
         </div>
     </section>
 
+	<!-- Volunteering -->
+<section id="volunteering">
+    <p class="section-label">Community Involvement</p>
+    <h2 class="section-title">Volunteering & Social Impact</h2>
+
+    <div class="volunteering-grid">
+        <div class="volunteer-card">
+            <div class="volunteer-header">
+                <div class="volunteer-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <div class="volunteer-title">
+                    <h3>UPAY NGO</h3>
+                    <span class="volunteer-role">Outreach Secretary (Volunteer) — Nagpur Region</span>
+                </div>
+            </div>
+            <div class="volunteer-content">
+                <ul class="volunteer-responsibilities">
+                    <li>Coordinated outreach and operational activities across multiple NGO centers in the Nagpur region, ensuring timely execution of education initiatives</li>
+                    <li>Led volunteer communication and alignment efforts to reduce coordination gaps during program delivery</li>
+                    <li>Helped structure outreach initiatives into actionable steps, improving clarity and execution consistency</li>
+                    <li>Supported monitoring of ongoing activities and escalated issues to ensure smooth on-ground operations</li>
+                </ul>
+                <div class="volunteer-tags">
+                    <span>Outreach Coordination</span>
+                    <span>Education Initiatives</span>
+                    <span>Volunteer Management</span>
+                    <span>Operations</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="volunteer-card">
+            <div class="volunteer-header">
+                <div class="volunteer-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                        <path d="M2 12h20"/>
+                    </svg>
+                </div>
+                <div class="volunteer-title">
+                    <h3>Rotaract Club of Nagpur</h3>
+                    <span class="volunteer-role">Community Service Director</span>
+                </div>
+            </div>
+            <div class="volunteer-content">
+                <p class="volunteer-description">Led and participated in various community service and social impact initiatives focused on spreading joy and supporting those in need.</p>
+                
+                <div class="volunteer-activities">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <span>Celebrating joy with orphans & underprivileged children</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span>Donation drives for children & needy families</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <span>Tree plantation drives for environmental sustainability</span>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                                <line x1="4" y1="22" x2="4" y2="15"/>
+                            </svg>
+                        </div>
+                        <span>"Clean India with Natural Pride" — Flag respect drives on 26th Jan & 15th Aug</span>
+                    </div>
+                </div>
+
+                <div class="volunteer-tags">
+                    <span>Community Service</span>
+                    <span>Social Impact</span>
+                    <span>Environment</span>
+                    <span>National Pride</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="volunteer-impact">
+        <div class="impact-stat">
+            <div class="impact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <span class="impact-number">2</span>
+            <span class="impact-label">Organizations</span>
+        </div>
+        <div class="impact-stat">
+            <div class="impact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+            </div>
+            <span class="impact-number">Active</span>
+            <span class="impact-label">Contributor</span>
+        </div>
+        <div class="impact-stat">
+            <div class="impact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </div>
+            <span class="impact-number">Multiple</span>
+            <span class="impact-label">Initiatives Led</span>
+        </div>
+        <div class="impact-stat">
+            <div class="impact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+            </div>
+            <span class="impact-number">Leadership</span>
+            <span class="impact-label">Roles Held</span>
+        </div>
+    </div>
+</section>
+
     <!-- Skills Matrix -->
     <section id="skills">
         <p class="section-label">Skills Matrix</p>
@@ -4311,9 +4763,9 @@
         }, observerOptions);
 
         // Observe all animatable elements
-        document.querySelectorAll('.solve-card, .capability-card, .project-showcase, .skill-category, .philosophy-card, .experience-card').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.solve-card, .capability-card, .project-showcase, .skill-category, .philosophy-card, .experience-card, .volunteer-card').forEach(el => {
+    observer.observe(el);
+		});
 
         // Counter animation for hero metrics
         function animateCounter(element, target) {
@@ -4464,6 +4916,10 @@ window.addEventListener('scroll', () => {
         document.querySelectorAll('.skill-category').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.1}s`;
         });
+		
+		document.querySelectorAll('.volunteer-card').forEach((card, index) => {
+    		card.style.transitionDelay = `${index * 0.15}s`;
+		});
 
 // Cycle through center values
 const centerValues = [
@@ -4522,4 +4978,5 @@ window.addEventListener('scroll', () => {
 </button>
 </body>
 </html>
+
 ```
