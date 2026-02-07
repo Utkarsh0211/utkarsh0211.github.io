@@ -1221,11 +1221,11 @@
 
         .tech-tag {
             font-size: 0.75rem;
-            padding: 0.5rem 1rem;
-            background: rgba(123, 45, 255, 0.1);
-            border: 1px solid rgba(123, 45, 255, 0.3);
-            color: var(--accent-secondary);
-            border-radius: 20px;
+ 		    padding: 0.5rem 1rem;
+		    background: rgba(0, 212, 255, 0.1);
+		    border: 1px solid rgba(0, 212, 255, 0.3);
+		    color: var(--accent-primary);
+		    border-radius: 20px;
         }
 
         .project-showcase-body {
@@ -2516,6 +2516,48 @@
             font-size: 0.8rem;
         }
 
+		.status-pulse {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-dot-core {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-tertiary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.status-ripple {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--accent-tertiary);
+    border-radius: 50%;
+    animation: rippleOut 2s ease-out infinite;
+}
+
+.status-ripple.delay {
+    animation-delay: 1s;
+}
+
+@keyframes rippleOut {
+    0% {
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+    }
+    100% {
+        width: 24px;
+        height: 24px;
+        opacity: 0;
+    }
+}
         .data-pulse {
             display: flex;
             align-items: center;
@@ -4601,14 +4643,12 @@
                 © 2026 Utkarsh Meshram — Business Analyst | Built with analysis and intent
             </div>
             <div class="footer-right">
-                <div class="data-pulse">
-                    <div class="pulse-bar"></div>
-                    <div class="pulse-bar"></div>
-                    <div class="pulse-bar"></div>
-                    <div class="pulse-bar"></div>
-                    <div class="pulse-bar"></div>
-                </div>
-                <span>Systems Active</span>
+			        <div class="status-pulse">
+			        <span class="status-dot-core"></span>
+			        <span class="status-ripple"></span>
+			        <span class="status-ripple delay"></span>
+			    </div>
+			    <span>Systems Active</span>
             </div>
         </div>
     </footer>
@@ -4980,3 +5020,4 @@ window.addEventListener('scroll', () => {
 </html>
 
 ```
+
