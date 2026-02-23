@@ -3483,13 +3483,25 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-  	  <svg class="logo-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-     		 <circle cx="16" cy="16" r="14"/>
-        	<path d="M8 16h16M16 8v16M10 10l12 12M22 10L10 22"/>
-   	 </svg>
- 	   UM
-	</a>
+       <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+  <svg class="logo-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+
+    <!-- Outer Circle -->
+    <circle cx="16" cy="16" r="14"/>
+
+    <!-- Connection Lines -->
+    <line x1="10" y1="10" x2="22" y2="10"/>
+    <line x1="10" y1="10" x2="16" y2="22"/>
+    <line x1="22" y1="10" x2="16" y2="22"/>
+
+    <!-- Nodes -->
+    <circle cx="10" cy="10" r="1.5" fill="currentColor"/>
+    <circle cx="22" cy="10" r="1.5" fill="currentColor"/>
+    <circle cx="16" cy="22" r="1.5" fill="currentColor"/>
+
+  </svg>
+  [ U•M ]
+</a>
         <ul class="nav-links">
             <li><a href="#solve">Problems</a></li>
             <li><a href="#capabilities">Capabilities</a></li>
@@ -3790,7 +3802,7 @@
 
             <div class="capability-card">
                 <span class="capability-number">03</span>
-                <h3>Systems Implementation & Process Alignment</h3>
+                <h3>Systems Implementation <br> & Process Alignment</h3>
                 <p>Managing CRM administration and supporting ERP workflows for seamless operations-finance integration.</p>
                 <div class="capability-outcomes">
                     <h4>Outcomes Delivered</h4>
@@ -5098,6 +5110,7 @@ function openEmailPopup(){
 </html>
 
 ```
+
 
 
 
